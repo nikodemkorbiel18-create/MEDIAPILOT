@@ -60,8 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
       interval = setInterval(cycle, 4200);
     });
   });
-<<<<<<< ours
-=======
 
   // Animated background (particles + hex drift)
   const canvas = document.querySelector('.hero-canvas');
@@ -144,5 +142,4 @@ document.addEventListener('DOMContentLoaded', () => {
       else raf = requestAnimationFrame(render);
     });
   }
->>>>>>> theirs
 });
