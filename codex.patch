@@ -145,10 +145,10 @@ index 0000000000000000000000000000000000000000..13e74b5be79fe98e5ffaa599f458c9b4
 +</svg>
 diff --git a/index.html b/index.html
 new file mode 100644
-index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c67070516a86da5
+index 0000000000000000000000000000000000000000..dd473bd3ae59cb6c817e5f902381dc29566bc43d
 --- /dev/null
 +++ b/index.html
-@@ -0,0 +1,294 @@
+@@ -0,0 +1,317 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
@@ -159,13 +159,13 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +  <link rel="preconnect" href="https://fonts.googleapis.com">
 +  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 +  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-+  <link rel="stylesheet" href="styles.css">
++  <link rel="stylesheet" href="/styles.css">
 +</head>
 +<body>
 +  <div class="page-shell">
 +    <header class="nav">
 +      <div class="nav-left">
-+        <img src="logo.svg" alt="MediaPilot logo" class="logo" aria-label="MediaPilot logo">
++        <img src="/logo.svg" alt="MediaPilot logo" class="logo" aria-label="MediaPilot logo">
 +        <span class="pill">Runs locally in your browser · No uploads required</span>
 +      </div>
 +      <nav class="nav-links" aria-label="Primary">
@@ -175,14 +175,14 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +        <a href="#faq">FAQ</a>
 +      </nav>
 +      <div class="nav-actions">
-+        <button class="ghost" data-scroll="#features">See features</button>
-+        <button class="primary" data-scroll="#top">Start free</button>
++        <button class="btn btn-primary" data-scroll="#top">Start free</button>
 +      </div>
 +    </header>
 +
 +    <main>
 +      <section class="hero" id="top">
-+        <img src="assets/hero-reference.svg" alt="Hero background inspiration" class="hero-bg" loading="lazy">
++        <img src="/assets/hero-reference.svg" alt="Hero background inspiration" class="hero-bg" loading="lazy">
++        <canvas class="hero-canvas" aria-hidden="true"></canvas>
 +        <div class="hero-overlay"></div>
 +        <div class="hero-content">
 +          <div class="hero-copy reveal">
@@ -190,8 +190,8 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +            <h1>Make every image post-ready in seconds.</h1>
 +            <p class="subhead">Resize, compress, and convert for TikTok, Reels, Shorts, IG, YouTube, and LinkedIn — all locally in your browser with pro-grade quality.</p>
 +            <div class="hero-ctas">
-+              <button class="primary" data-scroll="#features">Open tools</button>
-+              <button class="ghost" data-scroll="#features">See features</button>
++              <button class="btn btn-primary" data-scroll="#features">Open tools</button>
++              <button class="btn btn-secondary" data-scroll="#features">See features</button>
 +            </div>
 +            <div class="mini-trust">
 +              <span class="dot"></span>
@@ -203,7 +203,7 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +              <div class="status">
 +                <span class="status-dot"></span>Live preview
 +              </div>
-+              <button class="tiny">New batch</button>
++              <button class="btn btn-ghost tiny">New batch</button>
 +            </div>
 +            <div class="upload-area">
 +              <div class="upload-left">
@@ -211,7 +211,7 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +                <p>Drop images or browse</p>
 +                <small>PNG · JPG · HEIC · WEBP</small>
 +              </div>
-+              <button class="chip">Upload</button>
++              <button class="btn btn-secondary choose-files">Choose files</button>
 +            </div>
 +            <div class="divider"></div>
 +            <div class="preset-list">
@@ -238,30 +238,27 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +              </div>
 +            </div>
 +            <div class="panel-preview">
-+              <img src="assets/dashboard-reference.svg" alt="Dashboard inspired visualization" loading="lazy">
++              <img src="/assets/dashboard-reference.svg" alt="Dashboard inspired visualization" loading="lazy">
 +              <div class="floating-tag">70% leaner</div>
-+            </div>
-+            <div class="actions">
-+              <div class="format-chips">
-+                <button class="chip active">WEBP</button>
-+                <button class="chip">PNG</button>
-+                <button class="chip">JPG</button>
-+              </div>
-+              <button class="primary full" data-scroll="#features">Start free</button>
 +            </div>
 +          </div>
 +        </div>
 +      </section>
 +
 +      <section class="logos" aria-label="Trusted by">
-+        <p class="eyebrow">Trusted by creators & teams</p>
-+        <div class="logo-row">
-+          <div class="logo-pill">NovaFrame</div>
-+          <div class="logo-pill">AetherLabs</div>
-+          <div class="logo-pill">PixelForge</div>
-+          <div class="logo-pill">LumenAI</div>
-+          <div class="logo-pill">StoryMint</div>
-+          <div class="logo-pill">Northbeam</div>
++        <p class="eyebrow">Trusted by teams at</p>
++        <div class="logo-strip">
++          <div class="logo-track">
++            <span class="logo-item">NovaFrame</span>
++            <span class="logo-item">AetherLabs</span>
++            <span class="logo-item">PixelForge</span>
++            <span class="logo-item">LumenAI</span>
++            <span class="logo-item">StoryMint</span>
++            <span class="logo-item">Northbeam</span>
++            <span class="logo-item">FrameOS</span>
++            <span class="logo-item">VeloStudio</span>
++            <span class="logo-item">SignalNorth</span>
++          </div>
 +        </div>
 +      </section>
 +
@@ -273,34 +270,58 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +        </div>
 +        <div class="feature-grid">
 +          <article class="feature-card reveal">
-+            <div class="card-icon">⚡</div>
-+            <h3>Smart presets</h3>
-+            <p>Auto-size for TikTok, IG, Shorts, and more with curated defaults for each network.</p>
++            <div class="card-icon gradient-icon" aria-hidden="true">
++              <span class="icon-glyph">⚡</span>
++            </div>
++            <div class="card-copy">
++              <h3>Smart presets</h3>
++              <p>Auto-size for TikTok, IG, Shorts, and more with curated defaults for each network.</p>
++            </div>
 +          </article>
 +          <article class="feature-card reveal">
-+            <div class="card-icon">✨</div>
-+            <h3>Clean compression</h3>
-+            <p>Stay sharp while shrinking 40–70% with tuned, artifact-free compression.</p>
++            <div class="card-icon gradient-icon" aria-hidden="true">
++              <span class="icon-glyph">✨</span>
++            </div>
++            <div class="card-copy">
++              <h3>Clean compression</h3>
++              <p>Stay sharp while shrinking 40–70% with tuned, artifact-free compression.</p>
++            </div>
 +          </article>
 +          <article class="feature-card reveal">
-+            <div class="card-icon">🔀</div>
-+            <h3>Format conversion</h3>
-+            <p>Flip between JPG, PNG, WEBP with one tap and keep metadata optional.</p>
++            <div class="card-icon gradient-icon" aria-hidden="true">
++              <span class="icon-glyph">🔀</span>
++            </div>
++            <div class="card-copy">
++              <h3>Format conversion</h3>
++              <p>Flip between JPG, PNG, WEBP with one tap and keep metadata optional.</p>
++            </div>
 +          </article>
 +          <article class="feature-card reveal">
-+            <div class="card-icon">🛡️</div>
-+            <h3>Privacy-first</h3>
-+            <p>Everything happens locally in your browser — zero uploads, zero waiting.</p>
++            <div class="card-icon gradient-icon" aria-hidden="true">
++              <span class="icon-glyph">🛡</span>
++            </div>
++            <div class="card-copy">
++              <h3>Privacy-first</h3>
++              <p>Everything happens locally in your browser — zero uploads, zero waiting.</p>
++            </div>
 +          </article>
 +          <article class="feature-card reveal">
-+            <div class="card-icon">🚀</div>
-+            <h3>Ridiculously fast</h3>
-+            <p>GPU-accelerated image handling with instant previews and batch-ready flows.</p>
++            <div class="card-icon gradient-icon" aria-hidden="true">
++              <span class="icon-glyph">🚀</span>
++            </div>
++            <div class="card-copy">
++              <h3>Ridiculously fast</h3>
++              <p>GPU-accelerated image handling with instant previews and batch-ready flows.</p>
++            </div>
 +          </article>
 +          <article class="feature-card reveal">
-+            <div class="card-icon">📦</div>
-+            <h3>Pro-ready extras</h3>
-+            <p>Batch processing, zip exports, and share-ready links without leaving the browser.</p>
++            <div class="card-icon gradient-icon" aria-hidden="true">
++              <span class="icon-glyph">📦</span>
++            </div>
++            <div class="card-copy">
++              <h3>Pro-ready extras</h3>
++              <p>Batch processing, zip exports, and share-ready links without leaving the browser.</p>
++            </div>
 +          </article>
 +        </div>
 +      </section>
@@ -326,12 +347,14 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +        </div>
 +        <div class="secondary-logos reveal">
 +          <p class="eyebrow">Logos of trust</p>
-+          <div class="logo-row small">
-+            <div class="logo-pill">FrameOS</div>
-+            <div class="logo-pill">VeloStudio</div>
-+            <div class="logo-pill">SignalNorth</div>
-+            <div class="logo-pill">Cloudmint</div>
-+            <div class="logo-pill">SlateWorks</div>
++          <div class="logo-strip compact">
++            <div class="logo-track">
++              <span class="logo-item">FrameOS</span>
++              <span class="logo-item">VeloStudio</span>
++              <span class="logo-item">SignalNorth</span>
++              <span class="logo-item">Cloudmint</span>
++              <span class="logo-item">SlateWorks</span>
++            </div>
 +          </div>
 +        </div>
 +      </section>
@@ -425,9 +448,9 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +      </section>
 +    </main>
 +
-+    <footer class="footer">
-+      <div class="footer-top">
-+        <img src="logo.svg" alt="MediaPilot" class="logo small">
++      <footer class="footer">
++        <div class="footer-top">
++        <img src="/logo.svg" alt="MediaPilot" class="logo small">
 +        <div class="footer-links" aria-label="Footer">
 +          <a href="#top">Top</a>
 +          <a href="#features">Features</a>
@@ -435,12 +458,12 @@ index 0000000000000000000000000000000000000000..5a8aa701cbf6f6af94374d0f8c670705
 +          <a href="#reviews">Reviews</a>
 +          <a href="#faq">FAQ</a>
 +        </div>
-+        <button class="primary" data-scroll="#top">Start free</button>
-+      </div>
-+      <p class="footnote">© 2024 MediaPilot. Built privacy-first.</p>
-+    </footer>
-+  </div>
-+  <script src="main.js"></script>
++        <button class="btn btn-primary" data-scroll="#top">Start free</button>
++        </div>
++        <p class="footnote">© 2024 MediaPilot. Built privacy-first.</p>
++      </footer>
++    </div>
++  <script src="/main.js"></script>
 +</body>
 +</html>
 diff --git a/logo.svg b/logo.svg
@@ -473,10 +496,10 @@ index 0000000000000000000000000000000000000000..52107b3d15f57eff484ba29ce0312453
 +</svg>
 diff --git a/main.js b/main.js
 new file mode 100644
-index 0000000000000000000000000000000000000000..726390014197b4eec721d7f1fbcfe1a6cc8b7c6b
+index 0000000000000000000000000000000000000000..1dff7e05740d18cfdd7ce329ad718dcb332cf5c3
 --- /dev/null
 +++ b/main.js
-@@ -0,0 +1,63 @@
+@@ -0,0 +1,145 @@
 +document.addEventListener('DOMContentLoaded', () => {
 +  const revealables = document.querySelectorAll('.reveal');
 +  const observer = new IntersectionObserver((entries) => {
@@ -539,13 +562,95 @@ index 0000000000000000000000000000000000000000..726390014197b4eec721d7f1fbcfe1a6
 +      interval = setInterval(cycle, 4200);
 +    });
 +  });
++
++  // Animated background (particles + hex drift)
++  const canvas = document.querySelector('.hero-canvas');
++  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
++  if (canvas && !prefersReduced) {
++    const ctx = canvas.getContext('2d');
++    let width = canvas.clientWidth;
++    let height = canvas.clientHeight;
++    let raf;
++
++    const resize = () => {
++      width = canvas.clientWidth;
++      height = canvas.clientHeight;
++      canvas.width = width * window.devicePixelRatio;
++      canvas.height = height * window.devicePixelRatio;
++      ctx.setTransform(1, 0, 0, 1, 0, 0);
++      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
++    };
++    resize();
++    window.addEventListener('resize', resize);
++
++    const stars = Array.from({ length: 70 }, () => ({
++      x: Math.random() * width,
++      y: Math.random() * height,
++      r: Math.random() * 1.5 + 0.5,
++      speed: Math.random() * 0.3 + 0.05,
++      alpha: Math.random() * 0.6 + 0.2
++    }));
++
++    const hexes = Array.from({ length: 16 }, () => ({
++      x: Math.random() * width,
++      y: Math.random() * height,
++      size: Math.random() * 16 + 8,
++      drift: (Math.random() * 0.4 + 0.1) * (Math.random() > 0.5 ? 1 : -1),
++      alpha: Math.random() * 0.25 + 0.08
++    }));
++
++    const drawHex = (x, y, size, alpha) => {
++      const angle = Math.PI / 3;
++      ctx.beginPath();
++      for (let i = 0; i < 6; i++) {
++        const px = x + size * Math.cos(angle * i);
++        const py = y + size * Math.sin(angle * i);
++        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
++      }
++      ctx.closePath();
++      ctx.strokeStyle = `rgba(139,92,246,${alpha})`;
++      ctx.lineWidth = 1;
++      ctx.stroke();
++    };
++
++    let tick = 0;
++    const render = () => {
++      ctx.clearRect(0, 0, width, height);
++
++      stars.forEach(s => {
++        ctx.fillStyle = `rgba(34,211,238,${s.alpha})`;
++        ctx.beginPath();
++        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
++        ctx.fill();
++        s.y += s.speed;
++        if (s.y > height) s.y = -2;
++      });
++
++      tick += 0.004;
++      hexes.forEach(h => {
++        const wobble = Math.sin(tick + h.x * 0.01) * 6;
++        drawHex(h.x + wobble, h.y, h.size, h.alpha);
++        h.y += h.drift * 0.6;
++        if (h.y < -20) h.y = height + 20;
++        if (h.y > height + 20) h.y = -20;
++      });
++
++      raf = requestAnimationFrame(render);
++    };
++    raf = requestAnimationFrame(render);
++
++    document.addEventListener('visibilitychange', () => {
++      if (document.hidden) cancelAnimationFrame(raf);
++      else raf = requestAnimationFrame(render);
++    });
++  }
 +});
 diff --git a/styles.css b/styles.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e79f033cab
+index 0000000000000000000000000000000000000000..4f2515ff4c6c6764daca0e87c09d637a591b9945
 --- /dev/null
 +++ b/styles.css
-@@ -0,0 +1,339 @@
+@@ -0,0 +1,429 @@
 +:root {
 +  --bg: #050912;
 +  --panel: #0b1220;
@@ -556,6 +661,12 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  --primary: linear-gradient(135deg, #8b5cf6, #22d3ee);
 +  --radius: 18px;
 +  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
++  --spacing-sm: 12px;
++  --spacing-md: 16px;
++  --spacing-lg: 24px;
++  --spacing-xl: 32px;
++  --spacing-2xl: 48px;
++  --spacing-3xl: 64px;
 +}
 +
 +* { box-sizing: border-box; }
@@ -617,30 +728,47 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  color: #cfe3ff;
 +}
 +
-+button {
++.btn {
 +  font: inherit;
 +  border: none;
 +  cursor: pointer;
-+  border-radius: 12px;
-+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-+}
-+
-+.primary {
-+  padding: 12px 16px;
-+  background: var(--primary);
-+  color: #0b1220;
++  border-radius: 14px;
++  display: inline-flex;
++  align-items: center;
++  justify-content: center;
++  gap: 8px;
++  padding: 0 16px;
++  height: 44px;
 +  font-weight: 700;
++  color: #e5edff;
++  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
++  border: 1px solid transparent;
++}
++.btn-primary {
++  background: var(--primary);
++  color: #041018;
 +  box-shadow: 0 14px 30px rgba(139, 92, 246, 0.35);
 +}
-+.primary:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(34, 211, 238, 0.35); }
-+
-+.ghost {
-+  padding: 12px 16px;
-+  background: rgba(255,255,255,0.05);
++.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(34, 211, 238, 0.35); }
++.btn-secondary {
++  background: rgba(255,255,255,0.06);
 +  color: #dbeafe;
-+  border: 1px solid var(--stroke);
++  border-color: var(--stroke);
 +}
-+.ghost:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
++.btn-secondary:hover { transform: translateY(-2px); background: rgba(255,255,255,0.1); }
++.btn-ghost {
++  background: transparent;
++  color: #dbeafe;
++  border-color: transparent;
++}
++.btn-ghost:hover { color: #fff; }
++.btn:focus-visible {
++  outline: 2px solid rgba(34,211,238,0.8);
++  outline-offset: 2px;
++  box-shadow: 0 0 0 6px rgba(34,211,238,0.18);
++}
++.btn:active { transform: translateY(0); box-shadow: none; }
++.tiny { height: 36px; padding: 0 12px; }
 +
 +.hero {
 +  position: relative;
@@ -655,6 +783,22 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  min-height: 620px;
 +  box-shadow: var(--shadow);
 +}
++.hero::after {
++  content: "";
++  position: absolute;
++  inset: 0;
++  pointer-events: none;
++  background: repeating-linear-gradient(
++    180deg,
++    rgba(255,255,255,0.015),
++    rgba(255,255,255,0.015) 1px,
++    transparent 2px,
++    transparent 4px
++  );
++  mix-blend-mode: soft-light;
++  opacity: 0.12;
++  z-index: 1;
++}
 +.hero-bg {
 +  position: absolute;
 +  inset: 0;
@@ -663,6 +807,16 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  filter: blur(8px) saturate(1.2);
 +  opacity: 0.35;
 +  z-index: 0;
++}
++.hero-canvas {
++  position: absolute;
++  inset: 0;
++  width: 100%;
++  height: 100%;
++  pointer-events: none;
++  z-index: 0;
++  mix-blend-mode: screen;
++  opacity: 0.55;
 +}
 +.hero-overlay {
 +  position: absolute;
@@ -674,7 +828,7 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +}
 +.hero-content {
 +  position: relative;
-+  z-index: 1;
++  z-index: 2;
 +  display: grid;
 +  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 +  gap: 36px;
@@ -690,6 +844,7 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +.hero-copy .subhead { color: var(--muted); max-width: 520px; }
 +
 +.hero-ctas { display: flex; gap: 12px; margin: 22px 0; }
++.hero-ctas .btn { flex: 0 0 auto; }
 +.mini-trust { display: inline-flex; align-items: center; gap: 8px; color: #cfe3ff; font-size: 14px; }
 +.mini-trust .dot { width: 8px; height: 8px; border-radius: 50%; background: #22d3ee; box-shadow: 0 0 12px #22d3ee; }
 +
@@ -725,31 +880,21 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +.card-header { display: flex; justify-content: space-between; align-items: center; }
 +.status { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
 +.status-dot { width: 10px; height: 10px; border-radius: 50%; background: #22d3ee; box-shadow: 0 0 10px #22d3ee; }
-+.tiny { padding: 8px 10px; background: rgba(255,255,255,0.06); color: #dbeafe; border: 1px solid var(--stroke); }
-+.tiny:hover { transform: translateY(-2px); }
-+
 +.upload-area {
 +  display: flex;
 +  justify-content: space-between;
 +  align-items: center;
-+  padding: 16px;
++  padding: 14px;
 +  border-radius: 16px;
 +  background: rgba(255,255,255,0.03);
 +  border: 1px dashed rgba(255,255,255,0.12);
++  gap: 12px;
++  cursor: pointer;
 +}
 +.upload-left { display: grid; gap: 4px; }
 +.upload-left p { margin: 0; font-weight: 600; }
 +.upload-left small { color: var(--muted); }
 +.spark { width: 14px; height: 14px; border-radius: 4px; background: var(--primary); display: inline-block; box-shadow: 0 0 14px rgba(34, 211, 238, 0.5); }
-+
-+.chip {
-+  padding: 10px 14px;
-+  border-radius: 14px;
-+  background: rgba(255,255,255,0.08);
-+  color: #dbeafe;
-+  border: 1px solid var(--stroke);
-+}
-+.chip.active { background: var(--primary); color: #041018; }
 +
 +.divider { height: 1px; background: var(--stroke); }
 +
@@ -782,22 +927,50 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  border-radius: 12px;
 +  backdrop-filter: blur(6px);
 +}
-+.actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-+.format-chips { display: flex; gap: 10px; }
-+.full { flex: 1; text-align: center; }
 +
 +.eyebrow { text-transform: uppercase; letter-spacing: 0.14em; color: #8dd4ff; font-size: 12px; margin: 0; }
 +.subhead { color: var(--muted); margin: 6px 0 0; }
 +
-+.logos { margin: 60px 0 30px; text-align: center; display: grid; gap: 18px; }
-+.logo-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; align-items: center; }
-+.logo-row.small { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
-+.logo-pill { padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--stroke); color: #dbeafe; font-weight: 600; box-shadow: inset 0 1px 0 rgba(255,255,255,0.06); }
-+.logo-pill:hover { transform: translateY(-3px); background: rgba(255,255,255,0.06); }
++.logos { margin: 60px 0 30px; text-align: center; display: grid; gap: 12px; }
++.logo-strip {
++  border: 1px solid var(--stroke);
++  border-radius: 16px;
++  padding: 12px;
++  background: rgba(255,255,255,0.03);
++  overflow: hidden;
++}
++.logo-strip.compact { padding: 10px; }
++.logo-track {
++  display: grid;
++  grid-auto-flow: column;
++  grid-auto-columns: max-content;
++  gap: 24px;
++  align-items: center;
++  overflow-x: auto;
++  padding: 6px 6px 2px;
++  scroll-snap-type: x mandatory;
++}
++.logo-item {
++  display: inline-flex;
++  align-items: center;
++  justify-content: center;
++  height: 26px;
++  padding: 0 16px;
++  border-radius: 999px;
++  background: rgba(255,255,255,0.02);
++  border: 1px solid var(--stroke);
++  color: #dbeafe;
++  font-weight: 600;
++  opacity: 0.55;
++  filter: grayscale(1);
++  scroll-snap-align: start;
++  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
++}
++.logo-item:hover { opacity: 0.95; filter: grayscale(0); transform: translateY(-2px); }
 +
 +.section-head { text-align: center; max-width: 720px; margin: 0 auto 26px; }
 +
-+.features { margin: 40px 0; display: grid; gap: 26px; }
++.features { margin: 48px 0; display: grid; gap: 26px; }
 +.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
 +.feature-card {
 +  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
@@ -810,7 +983,7 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  position: relative;
 +  overflow: hidden;
 +  transition: transform 0.25s ease, border-color 0.25s ease;
-+}
++  }
 +.feature-card::after {
 +  content: "";
 +  position: absolute;
@@ -819,11 +992,23 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  filter: blur(38px);
 +}
 +.feature-card:hover { transform: translateY(-6px); border-color: rgba(139,92,246,0.45); }
-+.feature-card .card-icon { font-size: 22px; margin-bottom: 8px; }
-+.feature-card h3 { margin: 0 0 6px; }
++.feature-card .card-icon {
++  width: 44px;
++  height: 44px;
++  border-radius: 14px;
++  display: inline-flex;
++  align-items: center;
++  justify-content: center;
++  margin-bottom: 10px;
++  background: rgba(255,255,255,0.06);
++  border: 1px solid var(--stroke);
++}
++.gradient-icon { background: var(--primary); color: #041018; }
++.icon-glyph { font-size: 20px; }
++.card-copy h3 { margin: 0 0 6px; }
 +.feature-card p { margin: 0; color: var(--muted); }
 +
-+.proof { margin: 40px 0; background: linear-gradient(135deg, rgba(12, 18, 32, 0.9), rgba(6, 10, 18, 0.94)); border: 1px solid var(--stroke); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); background-image: url('assets/panel-reference.svg'); background-size: cover; background-position: center; }
++.proof { margin: 48px 0; background: linear-gradient(135deg, rgba(12, 18, 32, 0.9), rgba(6, 10, 18, 0.94)); border: 1px solid var(--stroke); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); background-image: url('/assets/panel-reference.svg'); background-size: cover; background-position: center; }
 +.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
 +.stat-card { padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--stroke); }
 +.stat-value { font-size: 28px; margin: 0 0 6px; font-weight: 800; }
@@ -870,6 +1055,15 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 +.reveal.visible { opacity: 1; transform: translateY(0); }
 +
++section { scroll-margin-top: 110px; }
++
++@media (prefers-reduced-motion: reduce) {
++  .hero-canvas { display: none; }
++  .hero::after { display: none; }
++  .reveal { transition: none; }
++  .btn { transition: none; }
++}
++
 +@media (max-width: 960px) {
 +  .nav { grid-template-columns: 1fr auto; grid-template-areas: "left actions" "links links"; }
 +  .nav-left { grid-area: left; }
@@ -880,8 +1074,9 @@ index 0000000000000000000000000000000000000000..f20bf024319cd6bae35145d38c28c0e7
 +  .nav-links { display: none; }
 +  .nav { grid-template-columns: 1fr auto; }
 +  .hero { padding: 50px 26px; }
-+  .hero-ctas { flex-direction: column; }
-+  .actions { flex-direction: column; align-items: stretch; }
-+  .format-chips { width: 100%; justify-content: space-between; }
++  .hero-ctas { flex-direction: column; align-items: stretch; }
 +  .review-card { width: 100%; }
++  .logo-track { grid-auto-flow: row; grid-auto-columns: unset; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
++  .hero-card { padding: 16px; }
++  .upload-area { flex-direction: column; align-items: flex-start; }
 +}
