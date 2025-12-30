@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Hero inspiration background">
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="55%" r="65%">
+      <stop offset="0%" stop-color="#11202f" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#0b1420" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#050912" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="32" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1400" height="900" fill="url(#halo)"/>
+  <g filter="url(#glow)">
+    <circle cx="380" cy="420" r="260" fill="#0ea5e9" opacity="0.14"/>
+    <circle cx="1040" cy="360" r="260" fill="#8b5cf6" opacity="0.2"/>
+    <ellipse cx="720" cy="760" rx="520" ry="180" fill="#0b8b8f" opacity="0.16"/>
+  </g>
+  <path d="M220 640 C420 520 720 520 1100 320" fill="none" stroke="url(#sweep)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M260 380 C520 500 840 380 1160 560" fill="none" stroke="#13d8c4" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+  <path d="M340 700 C540 640 760 700 1060 640" fill="none" stroke="#8b5cf6" stroke-width="6" stroke-linecap="round" opacity="0.25"/>
+  <g opacity="0.85">
+    <circle cx="710" cy="500" r="220" fill="url(#sweep)" opacity="0.22"/>
+    <circle cx="710" cy="500" r="110" fill="#0c1524" stroke="#3b82f6" stroke-opacity="0.22"/>
+    <path d="M710 300 L734 500 L690 512 Z" fill="#8b5cf6" opacity="0.45"/>
+    <path d="M620 450 C640 470 680 470 700 450" fill="none" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+    <path d="M730 500 L760 560 L705 540 Z" fill="#22d3ee" opacity="0.45"/>
+  </g>
+  <circle cx="420" cy="280" r="6" fill="#22d3ee" opacity="0.9"/>
+  <circle cx="980" cy="240" r="7" fill="#8b5cf6" opacity="0.85"/>
+  <circle cx="1080" cy="520" r="5" fill="#38bdf8" opacity="0.9"/>
+  <g stroke="#7dd3fc" stroke-width="2" stroke-linecap="round" opacity="0.65">
+    <line x1="220" y1="420" x2="240" y2="430"/>
+    <line x1="260" y1="450" x2="280" y2="470"/>
+    <line x1="1140" y1="380" x2="1160" y2="400"/>
+    <line x1="1100" y1="620" x2="1120" y2="640"/>
+  </g>
+</svg>
